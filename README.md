@@ -1,48 +1,67 @@
+# 🧠 Income Prediction Using Census Data
 
-# Iris Flower Prediction Model Deployment with Flask
-
-This repository demonstrates how to deploy a machine learning model using **Flask** to predict the class of Iris flowers based on features like Sepal Length, Sepal Width, Petal Length, and Petal Width.
-
-This simple web application serves as a beginner-friendly example of how to take an ML model and deploy it in a production-like setting using **Flask**. It also contains basic HTML forms to accept user input for predictions.
+Welcome to the **Income Prediction ML Project Assignment**!  
+This repository is provided as a base for your assignment where you will build a machine learning model to predict whether a person earns more than $50K per year using demographic and work-related attributes.
 
 ---
 
-The repository contains the following files and directories:
+## 📌 Objective
 
-- `app.py` - The main Flask application that runs the web server and handles requests.
-- `model.ipynb` - Jupyter notebook where the machine learning model is trained using the Iris dataset.
-- `templates/` - Contains HTML files (e.g., `index.html`) that provide the front-end for the application.
-- `requirements.txt` - Lists all the necessary libraries for the project.
-- `flask_beginners_guide.ipynb` - provides a step-by-step guide for Flask beginners.
-- `html_beginners_guide.ipynb` - provides a basic guide on HTML, including form elements and other beginner concepts.
+The goal of this assignment is to:
+- Perform **Exploratory Data Analysis (EDA)** on the "Adult Census Income" dataset.
+- **Preprocess the data** to make it ready for machine learning.
+- Train and evaluate a **classification model** to predict income class (`>50K` or `<=50K`).
+- **Deploy** the model using a simple **Flask web application** where users can input values and see the prediction.
+
+---
+## 📦 Dataset Information
+
+- Dataset Name: **Adult Census Income**
+- Source: [OpenML](https://www.openml.org/d/1590)
+- Load using:  
+  ```python
+  from sklearn.datasets import fetch_openml
+  data = fetch_openml("adult", version=2, as_frame=True)
+  ````
+
+* Target: `income`
+* Task: **Binary Classification**
 
 ---
 
-## How to Run
-1. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/your-username/Iris-Flower-Prediction-Model-Deployment.git
-   cd Iris-Flower-Prediction-Model-Deployment
-   ````
 
-2. Create a virtual environment and activate it:
+## 📝 Assignment Instructions
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
+1. **Fork this repository** into your GitHub account.
+2. Complete the assignment by:
+   - Performing EDA in a Jupyter notebook.
+   - Preprocessing the dataset.
+   - Building and evaluating a classification model.
+   - Saving the model using `pickle` or `joblib`.
+   - Creating a simple Flask app for deployment.
+3. Add your files into the appropriate folders as per the structure below.
+4. Replace this `README.md` with your own version, including:
+   - Project Title and Objective
+   - Dataset and Technologies used
+   - Methodology
+   -Screenshots/Demo
 
-3. Install the required dependencies:
+---
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 📂 Expected Folder Structure
 
-4. Run the Flask application:
+```
 
-   ```bash
-   python app.py
-   ```
+income-predictor/
+├── app.py                       # Flask app for web deployment
+├── model/
+│   └── pkl files         # Trained and serialized model
+├── templates/
+│   └── index.html               # HTML page for the web form
+├── static/                      # For CSS/images (optional)
+├── notebook/
+│   └── eda\_model\_training.ipynb # notebooks
+├── requirements.txt             # List of Python dependencies
+└── README.md                    # Your updated readme with project details
 
-5. Open your browser and go to `http://127.0.0.1:5000/` to access the app and make predictions.
-
+````
