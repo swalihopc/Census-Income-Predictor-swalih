@@ -1,67 +1,68 @@
 # 🧠 Income Prediction Using Census Data
 
 Welcome to the **Income Prediction ML Project Assignment**!  
-This repository is provided as a base for your assignment where you will build a machine learning model to predict whether a person earns more than $50K per year using demographic and work-related attributes.
+In this project, you will build a machine learning model to predict whether a person earns more than $50K per year using demographic and work-related attributes.
 
 ---
 
-## 📌 Objective
+## 🎯 Objective
 
-The goal of this assignment is to:
+Your task is to:
+
 - Perform **Exploratory Data Analysis (EDA)** on the "Adult Census Income" dataset.
-- **Preprocess the data** to make it ready for machine learning.
-- Train and evaluate a **classification model** to predict income class (`>50K` or `<=50K`).
-- **Deploy** the model using a simple **Flask web application** where users can input values and see the prediction.
-
+- **Preprocess the data** to make it suitable for machine learning.
+- Build and evaluate a **classification model** to predict income (`>50K` or `<=50K`).
+- Deploy the model using both:
+  - A **Flask web application**
+  - A **Streamlit app**
 ---
+
 ## 📦 Dataset Information
 
-- Dataset Name: **Adult Census Income**
-- Source: [OpenML](https://www.openml.org/d/1590)
-- Load using:  
+- **Dataset Name:** Adult Census Income
+- **Source:** [OpenML](https://www.openml.org/d/1590)
+- **Load using:**  
   ```python
   from sklearn.datasets import fetch_openml
   data = fetch_openml("adult", version=2, as_frame=True)
   ````
 
-* Target: `income`
-* Task: **Binary Classification**
+* **Target column:** `income`
+* **Task type:** Binary Classification (`>50K` or `<=50K`)
 
 ---
-
 
 ## 📝 Assignment Instructions
 
-1. **Fork this repository** into your GitHub account.
-2. Complete the assignment by:
-   - Performing EDA in a Jupyter notebook.
-   - Preprocessing the dataset.
-   - Building and evaluating a classification model.
-   - Saving the model using `pickle` or `joblib`.
-   - Creating a simple Flask app for deployment.
-3. Add your files into the appropriate folders as per the structure below.
-4. Replace this `README.md` with your own version, including:
-   - Project Title and Objective
-   - Dataset and Technologies used
-   - Methodology
-   -Screenshots/Demo
+1. **Fork this repository** to your GitHub account.
+2. Perform **EDA** and **data preprocessing** in a Jupyter Notebook.
+3. Build a **classification model**, evaluate its performance (accuracy, precision, recall, etc.).
+4. **Save the trained model** using `pickle` or `joblib`.
+5. Create a **Flask web app** that takes user input and displays the predicted income category.
+6. Create a **Streamlit app** with the same functionality but using Streamlit widgets.
+7. Update the `README.md` with:
+
+   * Your project overview
+   * Methodology
+   * Live app links (Streamlit if possible)
+   * Screenshots, etc.
+9. Push all your files to your forked GitHub repo and **submit the GitHub repo link**.
 
 ---
 
-## 📂 Expected Folder Structure
+## 📂 Folder Structure
 
 ```
-
 income-predictor/
-├── app.py                       # Flask app for web deployment
+├── flask_app.py                # Flask app entry point
+├── streamlit_app.py            # Streamlit app entry point
 ├── model/
-│   └── pkl files         # Trained and serialized model
+│   └── model.pkl               # Trained and serialized model files
 ├── templates/
-│   └── index.html               # HTML page for the web form
-├── static/                      # For CSS/images (optional)
+│   └── index.html              # HTML template for Flask form
+├── static/                     # (Optional) Static files for Flask
 ├── notebook/
-│   └── eda\_model\_training.ipynb # notebooks
-├── requirements.txt             # List of Python dependencies
-└── README.md                    # Your updated readme with project details
-
-````
+│   └── eda\_model.ipynb        # notebooks
+├── requirements.txt            # List of Python dependencies
+└── README.md                   # Updated with your project details
+```
