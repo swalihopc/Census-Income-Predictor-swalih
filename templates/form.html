@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Prediction</title>
+</head>
+<body>
+    <h1>INCOME PREDICTION</h1>
+    <form action="{{ url_for('index') }}" method="post">
+    Age: <input type="number" name="age" placeholder="Enter Your Age" required><br><br>
+    Education:
+    <input type="number" name="education-num" placeholder="Enter Here" required><br><br>
+    Capital-gain:
+    <input type="number" name="capital-gain" placeholder="Enter Here" required><br><br>
+    Capital-loss:
+    <input type="number" name="capital-loss" placeholder="Enter Here" required><br><br>
+    Hours-per-week:
+    <input type="number" name="hours-per-week" placeholder="Enter Here" required><br><br>
+    Are You Married:
+    <input type="radio" name="marital-status" value="Married-civ-spouse">
+    Do you have an occupation:
+    <input type="radio" name="occupation" value="Sales">
+    <input type="submit" value="Predict">                  
+    </form>
+                                                                                                                                                             
+    {% if prediction %}
+         <div class="result">{{ prediction }}</div>
+    {% endif %}
+</body>
+</html>    
