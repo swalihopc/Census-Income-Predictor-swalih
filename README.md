@@ -1,17 +1,21 @@
 # 🧠 Income Prediction Using Census Data
 
 Welcome to the **Income Prediction ML Project Assignment**!  
-In this project, you will build a machine learning model to predict whether a person earns more than $50K per year using demographic and work-related attributes.
+This is a web application that predicts whether a person earns more or less than $50K annually based on features like age, education, capital gain/loss, and marital status. The application uses a trained machine learning model and offers both a Flask-based web interface and a Streamlit interface for interaction.
+
+---
+
+🧠 Model Description: Model: A classification model (likely Logistic Regression, Random Forest, etc.) stored as classification_model.pkl
+
+Scaler: StandardScaler or similar object saved as scaler.pkl
+
+Target: Predict income
 
 ---
 
 ## 🎯 Objective
 
-Your task is to:
 
-- Perform **Exploratory Data Analysis (EDA)** on the "Adult Census Income" dataset.
-- **Preprocess the data** to make it suitable for machine learning.
-- Build and evaluate a **classification model** to predict income (`>50K` or `<=50K`).
 - Deploy the model using both:
   - A **Flask web application**
   - A **Streamlit app**
@@ -32,37 +36,31 @@ Your task is to:
 
 ---
 
-## 📝 Assignment Instructions
+🛠 Features:
 
-1. **Fork this repository** to your GitHub account.
-2. Perform **EDA** and **data preprocessing** in a Jupyter Notebook.
-3. Build a **classification model**, evaluate its performance (accuracy, precision, recall, etc.).
-4. **Save the trained model** using `pickle` or `joblib`.
-5. Create a **Flask web app** that takes user input and displays the predicted income category.
-6. Create a **Streamlit app** with the same functionality but using Streamlit widgets.
-7. Update the `README.md` with:
+Categorical to numerical feature mapping
 
-   * Your project overview
-   * Methodology
-   * Live app links (Streamlit if possible)
-   * Screenshots, etc.
-9. Push all your files to your forked GitHub repo and **submit the GitHub repo link**.
+Log-transform on age
+
+Standardization on selected numeric columns
+
+Manual mapping for education and sex
 
 ---
 
-## 📂 Folder Structure
+Two user interfaces:
 
-```
-income-predictor/
-├── flask_app.py                # Flask app entry point
-├── streamlit_app.py            # Streamlit app entry point
-├── model/
-│   └── model.pkl               # Trained and serialized model files
-├── templates/
-│   └── index.html              # HTML template for Flask form
-├── static/                     # (Optional) Static files for Flask
-├── notebook/
-│   └── eda\_model.ipynb        # notebooks
-├── requirements.txt            # List of Python dependencies
-└── README.md                   # Updated with your project details
-```
+Flask Web Interface
+
+Streamlit UI
+
+---
+
+![image](https://github.com/user-attachments/assets/c367b1b1-d928-471e-b4d3-11e8de57886b)
+
+---
+
+![image](https://github.com/user-attachments/assets/94f8a728-2c7d-457e-9e1f-204eeef12c2a)
+
+
+
